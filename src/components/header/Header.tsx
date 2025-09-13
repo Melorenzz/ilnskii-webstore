@@ -1,17 +1,21 @@
-import MainLayout from "../ui/MainLayout.tsx";
+import MainLayout from "../../ui/MainLayout.tsx";
 import {
     Bars3Icon,
     HeartIcon,
     MagnifyingGlassIcon,
     PaperAirplaneIcon,
     ShoppingCartIcon,
-    UserIcon
+    UserIcon, XMarkIcon
 } from "@heroicons/react/16/solid";
-import YellowButton from "../ui/YellowButton.tsx";
+import YellowButton from "../../ui/YellowButton.tsx";
+import CatalogModal from "./CatalogModal.tsx";
+import {useState} from "react";
 
 
 
 const Header = () => {
+    const [isOpenCatalog, setIsOpenCatalog] = useState<boolean>(false);
+
     return (
         <header className='mt-5 mb-10'>
             <MainLayout>
@@ -23,10 +27,18 @@ const Header = () => {
                     </div>
                     <div className='relative'>
                         <button
+                            onClick={() => setIsOpenCatalog(!isOpenCatalog)}
                             className='bg-[#FF0000] hidden lg:flex items-center gap-2 rounded-full px-5 h-[48px] text-white font-extrabold'>
-                            <Bars3Icon className='w-5'/>
+                            {isOpenCatalog ? (
+                                <XMarkIcon className='w-5' />
+                            ) : (
+                                <Bars3Icon className='w-5'/>
+                            )}
                             Каталог
                         </button>
+                        {isOpenCatalog && (
+                            <CatalogModal />
+                        )}
                     </div>
                     <div
                         className='max-w-[317px] w-full border border-[#E1E1E1] rounded-lg p-2 h-[48px] hidden lg:flex items-center gap-1'>
@@ -71,10 +83,8 @@ const Header = () => {
 
                 </div>
                 <nav className='flex mt-5 overflow-x-auto'>
-                    <YellowButton>
-                        <span>🍏</span>
-                        <p className='font-semibold'>Супермаркет</p>
-                    </YellowButton>
+                    <YellowButton text='🍏 Супермаркет' />
+
 
                 </nav>
             </MainLayout>

@@ -6,7 +6,7 @@ type MainLayoutProps = {
 
 const MainLayout = ({children}: MainLayoutProps) => {
     return (
-        <div className='max-w-[1377px] px-[55px] ml-auto mr-auto'>
+        <div className='max-w-[1377px] px-5 ml-auto mr-auto'>
             {children}
         </div>
     );

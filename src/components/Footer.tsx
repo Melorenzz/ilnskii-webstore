@@ -2,9 +2,9 @@ import MainLayout from "../ui/MainLayout.tsx";
 
 const Footer = () => {
     return (
-        <footer className="bg-red-600 text-white py-8">
+        <footer className="bg-red-600 text-white py-8 mt-auto">
             <MainLayout>
-                <div className="flex gap-5 justify-between mb-8">
+                <div className="flex gap-5 justify-between flex-wrap mb-8">
                     {/* Первая колонка - Итальянский онлайн */}
                     <div>
                         <h3 className="font-semibold mb-4">Итальянский онлайн</h3>
@@ -69,7 +69,7 @@ const Footer = () => {
                     {/* Четвертая колонка - Подписка */}
                     <div>
                         <h3 className="font-semibold mb-4">Подпишитесь на вкусные и полезные новости</h3>
-                        <div className="flex mb-4 gap-3">
+                        <div className="flex mb-4 gap-3 flex-wrap">
                             <input
                                 type="email"
                                 placeholder=""
@@ -95,7 +95,7 @@ const Footer = () => {
                             <p className="text-sm">Информация на сайте не является публичной офертой</p>
                         </div>
 
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center gap-4 flex-wrap">
                             {/* Visa */}
                             <div className="bg-white text-blue-900 px-2 py-1 rounded text-xs font-bold">
                                 VISA
