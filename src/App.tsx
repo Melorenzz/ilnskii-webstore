@@ -3,6 +3,7 @@ import Home from "./pages/Home.tsx";
 import Footer from "./components/Footer.tsx";
 import { Routes, Route } from "react-router-dom";
 import Vacansies from "./pages/Vacansies.tsx";
+import Catalog from "./pages/Catalog.tsx";
 
 export default function App() {
     return (
@@ -12,6 +13,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/vacancies" element={<Vacansies />} />
+                    <Route path="/catalog" element={<Catalog />} />
                 </Routes>
             </main>
             <Footer />

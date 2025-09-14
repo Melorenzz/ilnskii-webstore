@@ -1,5 +1,6 @@
 import YellowButton from "../../ui/YellowButton.tsx";
 import Subtitle from "./Subtitle.tsx";
+import {Swiper, SwiperSlide} from "swiper/react";
 
 const Discounts = () => {
     return (
@@ -14,20 +15,43 @@ const Discounts = () => {
                     <button> r </button>
                 </div>
             </div>
-            <div className='flex gap-[25px] mt-5'>
-                <div className='h-[406px] flex-1 border border-[#DADADA] rounded-xl'>
+            <Swiper
+                spaceBetween={20}    // расстояние между карточками
+                slidesPerView={1.25}
+                breakpoints={{
+                    500: { // при ширине >= 1024px (lg:)
+                        slidesPerView: 2.25,
+                    },
+                    1024: { // при ширине >= 1024px (lg:)
+                        slidesPerView: 4,
+                    },
+                }}
+                className="mt-5"
+                allowTouchMove={true}     // разрешаем свайп
+                simulateTouch={true}
+            >
+                <SwiperSlide>
+                    <div className='h-[406px] flex-1 border border-[#DADADA] rounded-xl'>
 
-                </div>
-                <div className='h-[406px] flex-1 border border-[#DADADA] rounded-xl'>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='h-[406px] flex-1 border border-[#DADADA] rounded-xl'>
 
-                </div>
-                <div className='h-[406px] flex-1 border border-[#DADADA] rounded-xl'>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='h-[406px] flex-1 border border-[#DADADA] rounded-xl'>
 
-                </div>
-                <div className='h-[406px] flex-1 border border-[#DADADA] rounded-xl'>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='h-[406px] flex-1 border border-[#DADADA] rounded-xl'>
 
-                </div>
-            </div>
+                    </div>
+                </SwiperSlide>
+            </Swiper>
+
         </>
     );
 };

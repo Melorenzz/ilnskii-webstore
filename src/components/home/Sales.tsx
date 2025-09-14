@@ -1,5 +1,6 @@
 import YellowButton from "../../ui/YellowButton.tsx";
 import Subtitle from "./Subtitle.tsx";
+import {Swiper, SwiperSlide} from "swiper/react";
 
 const Sales = () => {
     return (
@@ -8,12 +9,39 @@ const Sales = () => {
                 <Subtitle subtitle='АКЦИИ' />
                 <YellowButton text={'Смотреть все'} color='yellow' />
             </div>
-            <div className='flex gap-5 mt-5'>
-                <div className='aspect-[4/6] flex-1 rounded-xl bg-[red]'></div>
-                <div className='aspect-[4/6] flex-1 rounded-xl bg-[red]'></div>
-                <div className='aspect-[4/6] flex-1 rounded-xl bg-[red]'></div>
-                <div className='aspect-[4/6] flex-1 rounded-xl bg-[red]'></div>
-            </div>
+            <Swiper
+                spaceBetween={20}    // расстояние между карточками
+                slidesPerView={1.25}
+                breakpoints={{
+                    500: { // при ширине >= 1024px (lg:)
+                        slidesPerView: 2.25,
+                    },
+                    1024: { // при ширине >= 1024px (lg:)
+                        slidesPerView: 4,
+                    },
+                }}
+                className="mt-5"
+                allowTouchMove={true}     // разрешаем свайп
+                simulateTouch={true}
+            >
+                <SwiperSlide>
+                    <div className='aspect-[4/6] flex-1 rounded-xl bg-[red]'></div>
+
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='aspect-[4/6] flex-1 rounded-xl bg-[red]'></div>
+
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='aspect-[4/6] flex-1 rounded-xl bg-[red]'></div>
+
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='aspect-[4/6] flex-1 rounded-xl bg-[red]'></div>
+
+                </SwiperSlide>
+            </Swiper>
+
         </div>
     );
 };

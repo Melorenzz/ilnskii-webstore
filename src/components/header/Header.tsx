@@ -10,6 +10,7 @@ import {
 import YellowButton from "../../ui/YellowButton.tsx";
 import CatalogModal from "./CatalogModal.tsx";
 import {useState} from "react";
+import {Link} from "react-router-dom";
 
 
 
@@ -21,8 +22,11 @@ const Header = () => {
             <MainLayout>
                 <div className='flex items-center justify-between gap-2'>
                     <div className='flex items-center gap-5 '>
-                        <Bars3Icon className='min-w-7 text-[#FF0000] inline lg:hidden' />
-                        <img src="/images/logo.svg" alt="logo"/>
+                        <Bars3Icon className='min-w-7 max-w-7 text-[#FF0000] inline lg:hidden' />
+                        <Link to={'/'}>
+                            <img src="/images/logo.svg" alt="logo"/>
+
+                        </Link>
 
                     </div>
                     <div className='relative'>

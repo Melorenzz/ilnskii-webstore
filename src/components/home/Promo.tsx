@@ -4,7 +4,7 @@ const Promo = () => {
             <div className="flex justify-between items-center lg:flex-row flex-col">
                 {/* Левая часть с текстом */}
                 <div className='w-full lg:w-fit'>
-                    <h2 className="text-3xl font-bold uppercase mb-2 flex gap-2 justify-between lg:justify-start items-center lg:items-start">
+                    <h2 className="text-lg sm:text-3xl font-bold uppercase mb-2 flex gap-2 justify-between lg:justify-start items-center lg:items-start">
   <span className="flex flex-col leading-tight">
     <span className='lg:w-auto w-[220px]'>БЕСПЛАТНАЯ ДОСТАВКА</span>
     <span className="text-sm font-medium lowercase">первого заказа</span>

@@ -1,7 +1,7 @@
 const Subtitle = ({subtitle}: {subtitle: string}) => {
     return (
 
-            <h2 className='uppercase font-bold text-[32px]'>{subtitle}</h2>
+            <h2 className='uppercase font-bold text-xl sm:text-4xl'>{subtitle}</h2>
 
 
     );
