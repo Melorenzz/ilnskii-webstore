@@ -17,6 +17,8 @@ import {Link} from "react-router-dom";
 const Header = () => {
     const [isOpenCatalog, setIsOpenCatalog] = useState<boolean>(false);
 
+    const navigation = ['🍏 Супермаркет', '🍕 Кулинария', '🥟 Заморозка', '🧽 Другое', '🔥 Акции', '📍 Магазины']
+
     return (
         <header className='mt-5 mb-10'>
             <MainLayout>
@@ -29,8 +31,10 @@ const Header = () => {
                         </Link>
 
                     </div>
-                    <div className='relative'>
+                    <div onMouseEnter={() => setIsOpenCatalog(true)}
+                         onMouseLeave={() => setTimeout(() => {setIsOpenCatalog(false)}, 200)} className='relative'>
                         <button
+
                             onClick={() => setIsOpenCatalog(!isOpenCatalog)}
                             className='bg-[#FF0000] hidden lg:flex items-center gap-2 rounded-full px-5 h-[48px] text-white font-extrabold'>
                             {isOpenCatalog ? (
@@ -74,11 +78,11 @@ const Header = () => {
                         </div>
                     </div>
                     <button
-                        className='min-w-[48px] hidden lg:flex h-[48px] rounded-xl p-2 border border-[#E1E1E1] hover:border-[#FFA900] hover:bg-[#FFF8EB] transition cursor-pointer'>
-                        <HeartIcon className='text-[#E1E1E1] hover:text-[#FFA900] transition'/></button>
+                        className='min-w-[48px] hidden lg:flex h-[48px] group rounded-xl p-2 border border-[#E1E1E1] hover:border-[#FFA900] hover:bg-[#FFF8EB] transition cursor-pointer'>
+                        <HeartIcon className='text-[#E1E1E1] group-hover:text-[#FFA900] transition'/></button>
                     <button
-                        className='min-w-[48px] hidden lg:flex h-[48px] rounded-xl p-2 border border-[#E1E1E1] hover:border-[#FFA900] hover:bg-[#FFF8EB] transition cursor-pointer'>
-                        <UserIcon className='text-[#E1E1E1] hover:text-[#FFA900] transition'/></button>
+                        className='min-w-[48px] hidden lg:flex h-[48px] group rounded-xl p-2 border border-[#E1E1E1] hover:border-[#FFA900] hover:bg-[#FFF8EB] transition cursor-pointer'>
+                        <UserIcon className='text-[#E1E1E1] group-hover:text-[#FFA900] transition'/></button>
                     <button
                         className='bg-[#FF0000] rounded-xl px-5 hidden lg:flex items-center gap-1 h-[48px] text-white font-extrabold'>
                         <ShoppingCartIcon className='w-5'/>
@@ -86,10 +90,10 @@ const Header = () => {
                     </button>
 
                 </div>
-                <nav className='flex mt-5 overflow-x-auto'>
-                    <YellowButton text='🍏 Супермаркет' />
-
-
+                <nav className='flex mt-5 gap-3 overflow-x-auto'>
+                    {navigation.map((item, index) => (
+                        <YellowButton key={index} text={item} />
+                    ))}
                 </nav>
             </MainLayout>
         </header>

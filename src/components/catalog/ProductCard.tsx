@@ -2,7 +2,7 @@ import {HeartIcon} from "@heroicons/react/16/solid";
 
 export default function ProductCard() {
     return (
-        <div className="bg-white rounded-2xl border border-gray-200 p-3 relative">
+        <div className="bg-white h-fit rounded-2xl border border-gray-200 p-3 relative">
             {/* Heart icon */}
 
                 <HeartIcon className="absolute top-5 right-5 w-6 h-6 text-gray-300" />

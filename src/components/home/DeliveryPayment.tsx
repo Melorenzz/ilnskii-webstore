@@ -3,10 +3,10 @@ import Subtitle from "./Subtitle.tsx";
 
 const DeliveryPayment = () => {
     return (
-        <div className="mx-auto p-6 bg-white mt-20">
+        <div className="mx-auto lg:p-6 bg-white mt-20">
             <Subtitle subtitle='доставка и оплата'/>
 
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-20 mt-10">
+            <div className="flex flex-col lg:grid grid-cols-5 gap-20 mt-10">
                 {/* Левая колонка с информацией */}
                 <div className="space-y-8 col-span-2">
                     {/* Зоны доставки */}
@@ -70,7 +70,7 @@ const DeliveryPayment = () => {
                 <div className='col-span-3 '>
                     <h3 className="text-xl font-semibold text-red-600 mb-4">Карта доставки</h3>
                     <iframe
-                        className='h-full w-full rounded-2xl'
+                        className='h-70 lg:h-full w-full rounded-2xl'
                         src="https://maps.google.com/maps?hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
                         <a href="https://www.mapsdirections.info/fr/calculer-la-population-sur-une-carte">
                             test

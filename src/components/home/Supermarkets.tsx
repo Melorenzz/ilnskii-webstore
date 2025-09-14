@@ -10,11 +10,12 @@ const Supermarkets = () => {
                 <YellowButton text={'Смотреть все'} color='yellow' />
             </div>
             <Swiper
-                spaceBetween={20}    // расстояние между карточками
+                spaceBetween={10}    // расстояние между карточками
                 slidesPerView={2.25}
                 breakpoints={{
                     1024: { // при ширине >= 1024px (lg:)
                         slidesPerView: 4,
+                        spaceBetween: 20,   // расстояние между карточками
                     },
                 }}
                 className="mt-5"
@@ -35,13 +36,14 @@ const Supermarkets = () => {
                 </SwiperSlide>
             </Swiper>
             <Swiper
-                spaceBetween={20}    // расстояние между карточками
+                spaceBetween={10}    // расстояние между карточками
                 slidesPerView={2.25}
                 breakpoints={{
                     1024: { // при ширине >= 1024px (lg:)
                         slidesPerView: 4,
+                        spaceBetween: 20,   // расстояние между карточками
                     },
-                }}              className="mt-5"
+                }}              className="mt-3 lg:mt-5"
                 allowTouchMove={true}     // разрешаем свайп
                 simulateTouch={true}
             >
