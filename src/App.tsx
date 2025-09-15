@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Vacansies from "./pages/Vacansies.tsx";
 import Catalog from "./pages/Catalog.tsx";
 import Contacts from "./pages/Contacts.tsx";
+import Profile from "./pages/Profile.tsx";
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
                     <Route path="/vacancies" element={<Vacansies />} />
                     <Route path="/catalog" element={<Catalog />} />
                     <Route path="/contacts" element={<Contacts />} />
+                    <Route path="/profile" element={<Profile />} />
                 </Routes>
             </main>
             <Footer />

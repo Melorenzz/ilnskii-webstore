@@ -1,4 +1,4 @@
-import {MapPinIcon, PhoneIcon} from "@heroicons/react/16/solid";
+import {PhoneIcon} from "@heroicons/react/16/solid";
 
 const ContactsComponent = () => {
     return (

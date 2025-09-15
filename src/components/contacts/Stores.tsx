@@ -1,4 +1,3 @@
-import React from 'react';
 import {ClockIcon, MapPinIcon} from "@heroicons/react/16/solid";
 
 export default function Stores() {

@@ -15,7 +15,7 @@ const Catalog = () => {
                 <div className="">
                     <Sidebar />
                 </div>
-                <div className="grid grid-cols-3 gap-5 col-span-3  w-full">
+                <div className="grid grid-cols-3 gap-5 col-span-3 w-full">
                     <ProductCard />
                 </div>
             </div>
