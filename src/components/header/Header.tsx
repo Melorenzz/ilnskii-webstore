@@ -1,6 +1,6 @@
 import MainLayout from "../../ui/MainLayout.tsx";
 import {
-    Bars3Icon,
+    Bars3Icon, ChevronRightIcon,
     HeartIcon,
     MagnifyingGlassIcon,
     PaperAirplaneIcon,
@@ -16,15 +16,28 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
     const [isOpenCatalog, setIsOpenCatalog] = useState<boolean>(false);
-
+    const [isOpenBurger, setIsOpenBurger] = useState<boolean>(false);
     const navigation = ['🍏 Супермаркет', '🍕 Кулинария', '🥟 Заморозка', '🧽 Другое', '🔥 Акции', '📍 Магазины']
-
+    const catalog = [
+        {title: 'Акции', hasSubMenu: false},
+        {title: 'Супермаркет',
+            hasSubMenu: true,
+            subMenu: [
+                {name: 'Вода и напитки', link: ''},
+                {name: 'Молоко, масло и яйца', link: ''},
+                {name: 'Снэки и сухофрукты', link: ''},
+                {name: 'Кофе, чай и сладости', link: ''},
+                {name: 'Макароны и крупы', link: ''},
+                {name: 'Хлеб и выпечка', link: ''},
+            ]
+        },
+    ]
     return (
         <header className='mt-5 mb-10'>
             <MainLayout>
                 <div className='flex items-center justify-between gap-2'>
                     <div className='flex items-center gap-5 '>
-                        <Bars3Icon className='min-w-7 max-w-7 text-[#FF0000] inline lg:hidden' />
+                        <Bars3Icon onClick={() => setIsOpenBurger(!isOpenBurger)} className='min-w-7 max-w-7 text-[#FF0000] inline lg:hidden' />
                         <Link to={'/'}>
                             <img src="/images/logo.svg" alt="logo"/>
 
@@ -45,7 +58,7 @@ const Header = () => {
                             Каталог
                         </button>
                         {isOpenCatalog && (
-                            <CatalogModal />
+                            <CatalogModal catalog={catalog} />
                         )}
                     </div>
                     <div
@@ -83,13 +96,30 @@ const Header = () => {
                     <button
                         className='min-w-[48px] hidden lg:flex h-[48px] group rounded-xl p-2 border border-[#E1E1E1] hover:border-[#FFA900] hover:bg-[#FFF8EB] transition cursor-pointer'>
                         <UserIcon className='text-[#E1E1E1] group-hover:text-[#FFA900] transition'/></button>
-                    <button
+                    <Link
+                        to='/cart'
                         className='bg-[#FF0000] rounded-xl px-5 hidden lg:flex items-center gap-1 h-[48px] text-white font-extrabold'>
                         <ShoppingCartIcon className='w-5'/>
                         Корзина
-                    </button>
+                    </Link>
 
                 </div>
+
+                {isOpenBurger && (
+                    <ul className='w-full h-[500px]'>
+                        {catalog.map((item, index) => (
+
+                            <li key={index}>
+                                <button className='font-semibold flex justify-between px-3 w-full' >
+                                    {item.title}
+                                    <ChevronRightIcon className='w-5' />
+
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+
                 <nav className='flex mt-5 gap-3 overflow-x-auto'>
                     {navigation.map((item, index) => (
                         <YellowButton key={index} text={item} />

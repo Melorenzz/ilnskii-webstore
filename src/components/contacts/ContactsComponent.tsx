@@ -1,12 +1,13 @@
 import {PhoneIcon} from "@heroicons/react/16/solid";
+import Subtitle from "../home/Subtitle.tsx";
 
 const ContactsComponent = () => {
     return (
             <div className="mx-auto">
                 {/* Заголовок */}
-                <h2 className="text-3xl font-bold text-gray-800 mb-8">КОНТАКТЫ</h2>
+                <Subtitle subtitle='контакты' />
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-5">
                     {/* Левая колонка с информацией */}
                     <div className="lg:col-span-1 space-y-6">
                         {/* Описание компании */}

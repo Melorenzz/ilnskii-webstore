@@ -43,19 +43,19 @@ const DeliveryPayment = () => {
                         </p>
                     </div>
 
-                    {/* Оплата */}
+
                     <div>
                         <h3 className="text-xl font-semibold text-red-600 mb-4 flex items-center">
                             <CreditCardIcon className="w-5 h-5 mr-2"/>
                             Оплата
                         </h3>
-                        <p className="text-gray-700 leading-relaxed">
+                        <p className='text-gray-700 leading-relaxed'>
                             При оформлении заказа вы можете выбрать удобный для вас
                             способ расчета
                         </p>
                     </div>
 
-                    {/* Предупреждение */}
+
                     <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
                         <div className="flex items-start">
                             <InformationCircleIcon className="w-5 h-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0"/>

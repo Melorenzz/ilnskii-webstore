@@ -5,6 +5,9 @@ import YellowButton from "../ui/YellowButton.tsx";
 import {ChevronRightIcon} from "@heroicons/react/16/solid";
 
 const Catalog = () => {
+
+
+
     return (
         <MainLayout>
             <div className='flex justify-between items-center'>

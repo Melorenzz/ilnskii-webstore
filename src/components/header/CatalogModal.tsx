@@ -1,23 +1,8 @@
 import {useState} from "react";
 import {ChevronRightIcon} from "@heroicons/react/16/solid";
 
-const CatalogModal = () => {
+const CatalogModal = ({catalog}) => {
     const [selectedMenu, setSelectedMenu] = useState<string>('')
-
-    const catalog = [
-        {title: 'Акции', hasSubMenu: false},
-        {title: 'Супермаркет',
-            hasSubMenu: true,
-            subMenu: [
-                {name: 'Вода и напитки', link: ''},
-                {name: 'Молоко, масло и яйца', link: ''},
-                {name: 'Снэки и сухофрукты', link: ''},
-                {name: 'Кофе, чай и сладости', link: ''},
-                {name: 'Макароны и крупы', link: ''},
-                {name: 'Хлеб и выпечка', link: ''},
-            ]
-        },
-    ]
 
     return (
         <div className='p-5 max-h-[400px] min-w-[600px] z-5 rounded-xl shadow-xl bg-[white] absolute flex gap-5'>
