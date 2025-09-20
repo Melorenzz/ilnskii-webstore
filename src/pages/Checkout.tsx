@@ -19,9 +19,9 @@ export default function Checkout() {
 
     return (
         <MainLayout>
-            <div className='grid grid-cols-3 gap-10 my-10 '>
-                {/*<OrderForm formData={formData} setFormData={setFormData} />*/}
-                <PayOrder formData={formData} setFormData={setFormData} />
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 my-10 '>
+                <OrderForm formData={formData} setFormData={setFormData} />
+                {/*<PayOrder formData={formData} setFormData={setFormData} />*/}
                 <OrderResult />
             </div>
         </MainLayout>

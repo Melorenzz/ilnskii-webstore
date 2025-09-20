@@ -20,7 +20,7 @@ export default function OrderForm({formData, setFormData}: OrderFormProps) {
     };
 
     return (
-        <div className="col-span-2">
+        <div className="lg:col-span-2">
             <h1 className="text-3xl font-bold mb-6">ОФОРМЛЕНИЕ ЗАКАЗА</h1>
 
             {/* Ваши данные */}
@@ -143,6 +143,7 @@ export default function OrderForm({formData, setFormData}: OrderFormProps) {
                     rows={4}
                     className="w-full px-3 py-2 bg-yellow-50 border border-yellow-200 rounded text-sm resize-none focus:outline-none focus:border-yellow-400"
                 />
+
             </div>
         </div>
     );

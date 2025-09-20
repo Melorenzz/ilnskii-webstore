@@ -5,7 +5,7 @@ export default function PayOrder({formData, setFormData}: OrderFormProps)  {
 
 
     return (
-        <div className="col-span-2">
+        <div className="lg:col-span-2">
             {/* Ваши данные */}
             <div className="mb-6">
                 <h1 className="text-3xl font-bold mb-6">ОФОРМЛЕНИЕ ЗАКАЗА</h1>
